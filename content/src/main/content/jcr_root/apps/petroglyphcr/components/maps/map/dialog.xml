@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    stateful="false"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <basic
+                jcr:primaryType="cq:Panel"
+                title="Basic">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <mapId
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Map Id"
+                        name="./mapId"
+                        xtype="textfield" />
+                    <map
+					    jcr:primaryType="cq:Widget"
+					    defaultValue=""
+					    fieldLabel="Map"
+					    name="./map"
+					    type="select"
+					    xtype="selection">
+					    <options jcr:primaryType="cq:WidgetCollection">
+					        <world
+					            jcr:primaryType="nt:unstructured"
+					            text="World"
+					            value="world_mill_en"/>
+					        <europe
+					            jcr:primaryType="nt:unstructured"
+					            text="Europe"
+					            value="europe_mill_en"/>
+					        <unitedstates
+					            jcr:primaryType="nt:unstructured"
+					            text="United States"
+					            value="us_mill_en"/>
+					        <newyork
+					            jcr:primaryType="nt:unstructured"
+					            text="New York"
+					            value="us-ny-newyork_mill_en"/>
+					    </options>
+					</map>
+					<mapSize
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Map Size"
+                        name="./mapSize"
+                        xtype="sizefield" />
+                </items>
+            </basic>
+        </items>
+    </items>
+</jcr:root>
