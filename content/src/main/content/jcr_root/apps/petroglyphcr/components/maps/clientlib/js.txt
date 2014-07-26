@@ -1,0 +1,3 @@
+#base=js
+jquery-jvectormap-1.2.2.min.js
+maps.js

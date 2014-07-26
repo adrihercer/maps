@@ -1,0 +1,3 @@
+#base=js
+mapmanager.js
+mapmanagerform.js

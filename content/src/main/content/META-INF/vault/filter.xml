@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/petroglyphcr"/>
+	<filter root="/etc/designs/maps"/>
+	<filter root="/etc/map-manager"/>
+</workspaceFilter>
