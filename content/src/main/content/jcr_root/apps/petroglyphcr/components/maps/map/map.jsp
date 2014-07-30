@@ -12,6 +12,7 @@
 	final String map = properties.get("map", "");
 	final String height = properties.get("height", "400");
 	final String width = properties.get("width", "600");
+	final String backgroundColor = properties.get("backgroundColor", "383f47");
 %>
 
 <cq:includeClientLib js="maps" />
@@ -19,6 +20,6 @@
 <script src="/etc/designs/maps/<%= map %>.js" type="text/javascript"></script>
 <script>
     $(function(){
-      $('#<%= mapId %>').vectorMap({map: '<%= map %>'});
+      $('#<%= mapId %>').vectorMap({map: '<%= map %>', backgroundColor: '#<%= backgroundColor %>'});
     });
 </script>

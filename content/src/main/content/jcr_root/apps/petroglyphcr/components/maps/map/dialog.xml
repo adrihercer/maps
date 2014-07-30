@@ -49,6 +49,12 @@
                         fieldLabel="Map Size"
                         name="./mapSize"
                         xtype="sizefield" />
+                	<backgroundColor
+                		jcr:primaryType="cq:Widget" 
+                		fieldLabel="Background Color"
+                		showHexValue="{Boolean}true"
+                        name="./backgroundColor"
+                        xtype="colorfield" />
                 </items>
             </basic>
         </items>
