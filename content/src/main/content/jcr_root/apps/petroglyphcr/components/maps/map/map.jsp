@@ -15,6 +15,8 @@
 	final String width = properties.get("width", "600");
 	final String backgroundColor = properties.get("backgroundColor", "383f47");
 	final String[] markers = properties.get("markers", new String[]{});
+	final String markersFill = properties.get("markersFill", "F8E23B");
+	final String markerStroke = properties.get("markersStroke", "383f47");
 	
 	String markerValues = StringUtils.join(markers, ",");
 %>
@@ -26,6 +28,16 @@
 <script src="/etc/designs/maps/<%= map %>.js" type="text/javascript"></script>
 <script>
     $(function(){
-      $('#<%= mapId %>').vectorMap({map: '<%= map %>', backgroundColor: '#<%= backgroundColor %>', markers: [<%= markerValues %>]});
+    	$('#<%= mapId %>').vectorMap({ 
+    		map: '<%= map %>', 
+    		backgroundColor: '#<%= backgroundColor %>', 
+    		markers: [<%= markerValues %>],
+    		markerStyle: {
+    			initial: {
+    		      	fill: '#<%= markersFill %>',
+    		    	stroke: '#<%= markerStroke %>'
+    			}
+    		}
+    	});
     });
 </script>

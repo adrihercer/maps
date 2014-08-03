@@ -8,18 +8,10 @@ CQ.petroglyphcr = {};
 
 
 /**
-* @class MyClientLib.CustomPathFieldWidget
+* @class CQ.petroglyphcr.MapMarker
 * @extends CQ.form.CompositeField
-* This is a custom path field with link text and target
+* This is a custom component to provide the geographical location of a point
 * @param {Object} config the config object
-*/
-/**
-* @class Ejst.CustomWidget
-* @extends CQ.form.CompositeField
-* This is a custom widget based on {@link CQ.form.CompositeField}.
-* @constructor
-* Creates a new CustomWidget.
-* @param {Object} config The config object
 */
 CQ.petroglyphcr.MapMarker =  CQ.Ext.extend(CQ.form.CompositeField, {
 	
@@ -37,13 +29,13 @@ CQ.petroglyphcr.MapMarker =  CQ.Ext.extend(CQ.form.CompositeField, {
 
 	/**
 	* @private
-	* @type CQ.Ext.form.TextField
+	* @type CQ.Ext.form.NumberField
 	*/
 	latitudeValue: null,
 	
 	/**
 	* @private
-	* @type CQ.Ext.form.TextField
+	* @type CQ.Ext.form.NumberField
 	*/
 	longitudeValue: null,
 
@@ -57,9 +49,7 @@ CQ.petroglyphcr.MapMarker =  CQ.Ext.extend(CQ.form.CompositeField, {
 		config = config || {};
 		var defaults = {
 			"border": true,
-			//"labelWidth": 75,
 			"layout": "form"
-				//”columns”:6
 		};
 		
 		config = CQ.Util.applyDefaults(config, defaults);
@@ -77,12 +67,7 @@ CQ.petroglyphcr.MapMarker =  CQ.Ext.extend(CQ.form.CompositeField, {
 		this.add(this.hiddenField);
 
 		// Marker text
-		this.add(new CQ.Ext.form.Label({
-			cls: "customwidget-label",
-			text: "Marker Text"
-		}));
 		this.markerText = new CQ.Ext.form.TextField({
-			cls: "customwidget-1",
 			fieldLabel: "Marker Text: ",
 			maxLength: 30,
 			maxLengthText: "A maximum of 30 characters is allowed for the Marker Text.",
@@ -97,12 +82,7 @@ CQ.petroglyphcr.MapMarker =  CQ.Ext.extend(CQ.form.CompositeField, {
 		this.add(this.markerText);
 
 		// Latitude
-		/*this.add(new CQ.Ext.form.Label({
-			cls: "customwidget-label",
-			text: "Latitude"
-		}));*/
 		this.latitudeValue = new CQ.Ext.form.NumberField({
-			//cls: "customwidget-2",
 			fieldLabel: "Latitude: ",
 			maxLength: 10,
 			allowBlank: false,
@@ -120,12 +100,7 @@ CQ.petroglyphcr.MapMarker =  CQ.Ext.extend(CQ.form.CompositeField, {
 		this.add(this.latitudeValue);
 		
 		// Longitude
-		/*this.add(new CQ.Ext.form.Label({
-			cls: "customwidget-label",
-			text: "Longitude"
-		}));*/
 		this.longitudeValue = new CQ.Ext.form.NumberField({
-			//cls: "customwidget-2",
 			fieldLabel: "Longitude: ",
 			maxLength: 10,
 			allowBlank: false,
@@ -165,7 +140,6 @@ CQ.petroglyphcr.MapMarker =  CQ.Ext.extend(CQ.form.CompositeField, {
 	getRawValue: function () {
 		var marker = {
 			"latLng": [this.latitudeValue.getValue(), this.longitudeValue.getValue()],
-			//"longitude": this.longitudeValue.getValue(),
 			"name": this.markerText.getValue()
 		};
 		return JSON.stringify(marker);

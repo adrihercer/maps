@@ -63,11 +63,17 @@
                 jcr:primaryType="cq:Panel"
                 title="Markers">
                 <items jcr:primaryType="cq:WidgetCollection">
-                	<markersColor
+                	<markersFill
                 		jcr:primaryType="cq:Widget" 
-                		fieldLabel="Markers Color"
+                		fieldLabel="Markers Fill"
                 		showHexValue="{Boolean}true"
-                        name="./markersColor"
+                        name="./markersFill"
+                        xtype="colorfield" />
+                    <markersStroke
+                		jcr:primaryType="cq:Widget" 
+                		fieldLabel="Markers Stroke"
+                		showHexValue="{Boolean}true"
+                        name="./markersStroke"
                         xtype="colorfield" />
                 	<markerList
 						jcr:primaryType="cq:Widget"
