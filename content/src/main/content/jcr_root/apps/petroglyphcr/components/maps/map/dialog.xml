@@ -7,9 +7,9 @@
         jcr:primaryType="cq:Widget"
         xtype="tabpanel">
         <items jcr:primaryType="cq:WidgetCollection">
-            <basic
+            <basics
                 jcr:primaryType="cq:Panel"
-                title="Basic">
+                title="Basics">
                 <items jcr:primaryType="cq:WidgetCollection">
                     <mapId
                         jcr:primaryType="cq:Widget"
@@ -55,8 +55,33 @@
                 		showHexValue="{Boolean}true"
                         name="./backgroundColor"
                         xtype="colorfield" />
+                        
+                    
                 </items>
-            </basic>
+            </basics>
+            <markers
+                jcr:primaryType="cq:Panel"
+                title="Markers">
+                <items jcr:primaryType="cq:WidgetCollection">
+                	<markersColor
+                		jcr:primaryType="cq:Widget" 
+                		fieldLabel="Markers Color"
+                		showHexValue="{Boolean}true"
+                        name="./markersColor"
+                        xtype="colorfield" />
+                	<markerList
+						jcr:primaryType="cq:Widget"
+						fieldDescription="Press + to add more links"
+						fieldLabel="Marker List"
+						name="./markers"
+						xtype="multifield">
+						<fieldConfig
+							jcr:primaryType="cq:Widget"
+							xtype="mapmarker"/>
+							<listeners jcr:primaryType="nt:unstructured" />
+					</markerList>
+                </items>
+            </markers>
         </items>
     </items>
 </jcr:root>
