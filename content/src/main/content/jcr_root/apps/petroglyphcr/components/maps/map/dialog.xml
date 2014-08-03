@@ -77,7 +77,7 @@
                         xtype="colorfield" />
                 	<markerList
 						jcr:primaryType="cq:Widget"
-						fieldDescription="Press + to add more links"
+						fieldDescription="Press + to add more markers"
 						fieldLabel="Marker List"
 						name="./markers"
 						xtype="multifield">
