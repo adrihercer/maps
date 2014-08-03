@@ -1,3 +1,9 @@
+/**
+ * Copyright 2014, Adrian Herrera
+ * Licensed under the MIT license.
+ *
+ */
+
 CQ.petroglyphcr = {};
 
 CQ.petroglyphcr.MapManager = CQ.Ext.extend(CQ.Ext.Panel, {

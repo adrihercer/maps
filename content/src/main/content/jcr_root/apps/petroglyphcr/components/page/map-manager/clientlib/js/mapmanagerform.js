@@ -1,3 +1,9 @@
+/**
+ * Copyright 2014, Adrian Herrera
+ * Licensed under the MIT license.
+ *
+ */
+
 CQ.petroglyphcr.MapManagerForm = CQ.Ext.extend(CQ.Ext.form.FormPanel, {
     constructor: function(config) {
         config = (!config ? {} : config);

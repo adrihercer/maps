@@ -1,3 +1,10 @@
+<%--
+
+	Copyright 2014, Adrian Herrera
+	Licensed under the MIT license.
+	
+ --%>
+ 
 <%@include file="/libs/foundation/global.jsp" %>
 <%@page contentType="text/html"
          pageEncoding="utf-8"
