@@ -1,3 +1,8 @@
+/**
+ * Copyright 2014, Adrian Herrera
+ * Licensed under the MIT license.
+ */
+
 package com.petroglyphcr.cq.maps.model;
 
 import javax.inject.Inject;
