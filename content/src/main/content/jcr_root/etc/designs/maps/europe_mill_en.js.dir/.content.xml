@@ -3,6 +3,7 @@
     jcr:primaryType="nt:file">
     <jcr:content
         jcr:lastModifiedBy="admin"
-        jcr:primaryType="nt:unstructured"
-        title="Europe"/>
+        jcr:mixinTypes="[mix:title]"
+        jcr:primaryType="nt:resource"
+        jcr:title="Europe"/>
 </jcr:root>

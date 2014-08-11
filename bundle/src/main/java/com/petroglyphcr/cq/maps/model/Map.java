@@ -12,6 +12,14 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 
+/**
+ * Map class that represents the configuration of the map component.
+ * The Model annotation allows to perform a direct mapping with the 
+ * content stored in the JCR.
+ * 
+ * @author Adrian Herrera
+ *
+ */
 @Model(adaptables=Resource.class)
 public class Map {
 
@@ -90,6 +98,7 @@ public class Map {
 		markerStroke = "383f47";
 	}
 	
+	@Override
 	public String toString() {
 		return "Map = [mapId=" + mapId + "]";
 	}

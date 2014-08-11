@@ -16,9 +16,20 @@ import com.petroglyphcr.cq.maps.model.Map;
 import tldgen.Tag;
 import tldgen.TagAttribute;
 
+/**
+ * This class implements the tag used in the map component jsp to
+ * retrieve the component configuration stored in the JCR.
+ * 
+ * @author Adrian Herrera
+ *
+ */
 @Tag
 public class MapTag extends BodyTagSupport {
 
+	/**
+	 * Contains the name of the page context attribute that is going
+	 * to store the Map instance
+	 */
 	private String var;
     
 	@Override
