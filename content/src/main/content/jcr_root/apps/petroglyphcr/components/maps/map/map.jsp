@@ -7,35 +7,24 @@
 
 <%@include file="/libs/foundation/global.jsp"%>
 <%@page import="org.apache.commons.lang.StringUtils" %>
-
-<%
-	final String mapId = properties.get("mapId", "map-default-id");
-	final String map = properties.get("map", "");
-	final String height = properties.get("height", "400");
-	final String width = properties.get("width", "600");
-	final String backgroundColor = properties.get("backgroundColor", "383f47");
-	final String[] markers = properties.get("markers", new String[]{});
-	final String markersFill = properties.get("markersFill", "F8E23B");
-	final String markerStroke = properties.get("markersStroke", "383f47");
-	
-	String markerValues = StringUtils.join(markers, ",");
-%>
+<%@taglib prefix="petroglyphcr" uri="http://www.petroglyphcr.com/cq" %>
+<petroglyphcr:map var="map" />
 
 <cq:includeClientLib js="maps" />
 <cq:includeClientLib js="petroglyphcr.maps.widgets" />
 
-<div id="<%= mapId %>" style="width: <%= width %>px; height: <%= height %>px"></div>
-<script src="/etc/designs/maps/<%= map %>.js" type="text/javascript"></script>
+<div id="${map.mapId}" style="width: ${map.width}px; height: ${map.height}px"></div>
+<script src="/etc/designs/maps/${map.map}.js" type="text/javascript"></script>
 <script>
     $(function(){
-    	$('#<%= mapId %>').vectorMap({ 
-    		map: '<%= map %>', 
-    		backgroundColor: '#<%= backgroundColor %>', 
-    		markers: [<%= markerValues %>],
+    	$('#${map.mapId}').vectorMap({ 
+    		map: '${map.map}', 
+    		backgroundColor: '#${map.backgroundColor}', 
+    		markers: [${map.markers}],
     		markerStyle: {
     			initial: {
-    		      	fill: '#<%= markersFill %>',
-    		    	stroke: '#<%= markerStroke %>'
+    		      	fill: '#${map.markersFill}',
+    		    	stroke: '#${map.markerStroke}'
     			}
     		}
     	});
