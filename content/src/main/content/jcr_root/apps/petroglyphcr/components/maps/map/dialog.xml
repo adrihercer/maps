@@ -23,26 +23,11 @@
 					    fieldLabel="Map"
 					    name="./map"
 					    type="select"
-					    xtype="selection">
-					    <options jcr:primaryType="cq:WidgetCollection">
-					        <world
-					            jcr:primaryType="nt:unstructured"
-					            text="World"
-					            value="world_mill_en"/>
-					        <europe
-					            jcr:primaryType="nt:unstructured"
-					            text="Europe"
-					            value="europe_mill_en"/>
-					        <unitedstates
-					            jcr:primaryType="nt:unstructured"
-					            text="United States"
-					            value="us_mill_en"/>
-					        <newyork
-					            jcr:primaryType="nt:unstructured"
-					            text="New York"
-					            value="us-ny-newyork_mill_en"/>
-					    </options>
-					</map>
+					    xtype="selection"
+					    options="/bin/petroglyphcr/maplisting.json"
+					    optionsRoot="options"
+					    optionsTextField="label"
+					    optionsValueField="value" />
 					<mapSize
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -55,8 +40,6 @@
                 		showHexValue="{Boolean}true"
                         name="./backgroundColor"
                         xtype="colorfield" />
-                        
-                    
                 </items>
             </basics>
             <markers

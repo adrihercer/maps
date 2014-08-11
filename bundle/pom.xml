@@ -86,6 +86,12 @@
 			<version>3.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		
     </dependencies>
 
     <!-- ====================================================================== -->
@@ -112,13 +118,26 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>com.petroglyphcr.cq.maps-bundle</Bundle-SymbolicName>
-                        <Import-Package>javax.servlet.jsp;ver
- sion="[2.1,3)",javax.servlet.jsp.tagext;version="[2.1,3)",*</Import-Package>
+                        <Export-Package>
+                        	com.google.gson,
+                        	com.google.gson.annotations,
+                        	com.google.gson.internal,
+							com.google.gson.internal.bind,
+							com.google.gson.reflect,
+							com.google.gson.stream,
+                        	com.petroglyphcr.cq.maps.model,
+                        	com.petroglyphcr.cq.maps.tag
+                        </Export-Package>
+                        <Import-Package>
+                        	javax.servlet.jsp;version="[2.1,3)",
+                        	javax.servlet.jsp.tagext;version="[2.1,3)",
+                        	*
+                        </Import-Package>
                         <Sling-Model-Packages>
   							com.petroglyphcr.cq.maps.model
 						</Sling-Model-Packages>
-						
 						<Include-Resource>META-INF/taglib.tld=target/classes/META-INF/taglib.tld,{maven-resources}</Include-Resource>
+						<Embed-Dependency>com.google.gson;scope=compile</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
